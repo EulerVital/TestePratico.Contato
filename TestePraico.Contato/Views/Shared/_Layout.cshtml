@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="wrapper">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Novo Contato</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/adminLTE")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tel-mask').inputmask("(99) 9999-9999");
+            $('.cel-mask').inputmask("(99) 99999-9999");
+        });
+    </script>
+
+</body>
+</html>
